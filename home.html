@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>Assignment #3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 50px;
+  background-color: white;
+}
+.wrapper {
+margin-top: 20px;
+background-color: lightblue;
+padding: 10px;
+margin-right: 300px;
+}
+</style>
+
+<body>
+
+  <input type="search" class="form-search" id="searchBox" placeholder="Search">
+  <button id="search">Search</button>
+
+  <script type="template/handlebars" id="subreddits-template">
+  {{#each property}}
+  <div class ="wrapper">
+  <div>Score: {{score}}</div>
+  <div> Title: <a href="{{titleURL}}">{{title}}</a></div>
+  <div>Comment Count: {{commentCount}}</div>
+  <div>Archived?: {{archived}}</div>
+  </div>
+  <br>
+  {{else}}
+  <div>Nothing Found</div>
+  {{/each}}
+  </script>
+
+  <div id="subreddits"></div>
+
+  <script src="jquery-3.1.0.js"> </script>
+  <script src="script.js"></script>
+  <script src="handlebars-v4.0.5.js"> </script>
+
+</body>
+
+</html>
